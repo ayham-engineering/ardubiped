@@ -1,4 +1,4 @@
-# ardubiped
+# Ardubiped
 
 A 10-DOF biped robot simulation controlled via ArduPilot (ArduRover) in Gazebo Harmonic.
 
