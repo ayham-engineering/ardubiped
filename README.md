@@ -5,6 +5,7 @@ A 10-DOF biped robot simulation controlled via ArduPilot (ArduRover) in Gazebo H
 Each leg has Hip (Pitch + Roll), Knee (Pitch), and Ankle (Pitch + Roll) joints. 5 DOF per leg, 10 total. The robot is anchored to the world for joint testing.
 
 [Read the full writeup on Substack](https://open.substack.com/pub/ayhamnotes/p/ardupilot-is-flight-control-software?r=4kv56c&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true)
+
 [Read the raw logs on Telegram](https://t.me/ayham_logs)
 
 ---
