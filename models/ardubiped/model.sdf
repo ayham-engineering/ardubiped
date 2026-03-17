@@ -1,27 +1,19 @@
 <?xml version="1.0" ?>
 <sdf version="1.10">
   <model name="ardubiped_V3">
-    <pose>0 0 0.7 0 0 0</pose>
-    
+    <pose>0 0 0.75 0 0 0</pose>
+
     <link name="torso">
-      <pose>0 0 0 0 0 0</pose> 
-      <inertial> 
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
         <mass>2.0</mass>
         <inertia>
-          <ixx>0.0187</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.0217</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0104</izz>
+          <ixx>0.0187</ixx><ixy>0.0</ixy><ixz>0.0</ixz>
+          <iyy>0.0217</iyy><iyz>0.0</iyz><izz>0.0104</izz>
         </inertia>
       </inertial>
-      <collision name="torso_collision">
-        <geometry><box><size>0.20 0.15 0.30</size></box></geometry>
-      </collision>
-      <visual name="torso_visual">
-        <geometry><box><size>0.20 0.15 0.30</size></box></geometry>
-      </visual>
+      <collision name="torso_collision"><geometry><box><size>0.20 0.15 0.30</size></box></geometry></collision>
+      <visual name="torso_visual"><geometry><box><size>0.20 0.15 0.30</size></box></geometry></visual>
       <sensor name="torso_imu" type="imu">
         <always_on>1</always_on>
         <update_rate>250</update_rate>
@@ -29,27 +21,157 @@
       </sensor>
     </link>
 
-    <link name="left_thigh"><pose relative_to="left_hip_dummy">0 0 -0.125 0 0 0</pose><inertial><mass>1.0</mass><inertia><ixx>0.0057</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0057</iyy><iyz>0.0</iyz><izz>0.0011</izz></inertia></inertial><collision name="left_thigh_collision"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></collision><visual name="left_thigh_visual"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></visual></link>
-    <link name="right_thigh"><pose relative_to="right_hip_dummy">0 0 -0.125 0 0 0</pose><inertial><mass>1.0</mass><inertia><ixx>0.0057</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0057</iyy><iyz>0.0</iyz><izz>0.0011</izz></inertia></inertial><collision name="right_thigh_collision"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></collision><visual name="right_thigh_visual"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></visual></link>
-    <link name="left_shin"><pose>-0.10 0 -0.525 0 0 0</pose><inertial><mass>0.8</mass><inertia><ixx>0.0044</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0044</iyy><iyz>0.0</iyz><izz>0.00048</izz></inertia></inertial><collision name="left_shin_collision"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></collision><visual name="left_shin_visual"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></visual></link>
-    <link name="right_shin"><pose>0.10 0 -0.525 0 0 0</pose><inertial><mass>0.8</mass><inertia><ixx>0.0044</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0044</iyy><iyz>0.0</iyz><izz>0.00048</izz></inertia></inertial><collision name="right_shin_collision"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></collision><visual name="right_shin_visual"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></visual></link>
-    <link name="right_foot"><pose>0.10 0 -0.67 0 0 0</pose><inertial><mass>0.4</mass><inertia><ixx>0.0014</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.00053333</iyy><iyz>0.0</iyz><izz>0.0018</izz></inertia></inertial><collision name="right_foot_collision"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></collision><visual name="right_foot_visual"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></visual></link>
-    <link name="left_foot"><pose>-0.10 0 -0.67 0 0 0</pose><inertial><mass>0.4</mass><inertia><ixx>0.0014</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.00053333</iyy><iyz>0.0</iyz><izz>0.0018</izz></inertia></inertial><collision name="left_foot_collision"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></collision><visual name="left_foot_visual"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></visual></link>
-    <link name="right_hip_dummy"><pose relative_to="torso">0.10 0 -0.15 0 0 0</pose><inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial></link>
-    <link name="left_hip_dummy"><pose relative_to="torso">-0.10 0 -0.15 0 0 0</pose><inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial></link>
-    <link name="right_ankle_dummy"><pose>0.10 0 -0.65 0 0 0</pose><inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial></link>
-    <link name="left_ankle_dummy"><pose>-0.10 0 -0.65 0 0 0</pose><inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial></link>
-    
-    <joint name="right_hip_pitch" type="revolute"><pose relative_to="right_thigh">0 0 0.125 0 0 0</pose><parent>right_hip_dummy</parent><child>right_thigh</child><axis><xyz>0 1 0</xyz><limit><lower>-1.57</lower><upper>1.57</upper><effort>100</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="right_hip_roll" type="revolute"><pose relative_to="right_hip_dummy">0 0 0 0 0 0</pose><parent>torso</parent><child>right_hip_dummy</child><axis><xyz>1 0 0</xyz><limit><lower>-1.57</lower><upper>1.57</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="right_knee_pitch" type="revolute"><pose relative_to="right_shin">0 0 0.125 0 0 0</pose><parent>right_thigh</parent><child>right_shin</child><axis><xyz>0 1 0</xyz><limit><lower>-1.57</lower><upper>0.0</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="right_ankle_pitch" type="revolute"><pose relative_to="right_foot">0 0 0.02 0 0 0</pose><parent>right_ankle_dummy</parent><child>right_foot</child><axis><xyz>0 1 0</xyz><limit><lower>-0.78</lower><upper>0.78</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="right_ankle_roll" type="revolute"><pose relative_to="right_ankle_dummy">0 0 0 0 0 0</pose><parent>right_shin</parent><child>right_ankle_dummy</child><axis><xyz>1 0 0</xyz><limit><lower>-0.78</lower><upper>0.78</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="left_hip_pitch" type="revolute"><pose relative_to="left_thigh">0 0 0.125 0 0 0</pose><parent>left_hip_dummy</parent><child>left_thigh</child><axis><xyz>0 1 0</xyz><limit><lower>-1.57</lower><upper>1.57</upper><effort>100</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="left_hip_roll" type="revolute"><pose relative_to="left_hip_dummy">0 0 0 0 0 0</pose><parent>torso</parent><child>left_hip_dummy</child><axis><xyz>1 0 0</xyz><limit><lower>-1.57</lower><upper>1.57</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="left_knee_pitch" type="revolute"><pose relative_to="left_shin">0 0 0.125 0 0 0</pose><parent>left_thigh</parent><child>left_shin</child><axis><xyz>0 1 0</xyz><limit><lower>-1.57</lower><upper>0.0</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="left_ankle_pitch" type="revolute"><pose relative_to="left_foot">0 0 0.02 0 0 0</pose><parent>left_ankle_dummy</parent><child>left_foot</child><axis><xyz>0 1 0</xyz><limit><lower>-0.78</lower><upper>0.78</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
-    <joint name="left_ankle_roll" type="revolute"><pose relative_to="left_ankle_dummy">0 0 0 0 0 0</pose><parent>left_shin</parent><child>left_ankle_dummy</child><axis><xyz>1 0 0</xyz><limit><lower>-0.78</lower><upper>0.78</upper><effort>10</effort><velocity>1.0</velocity></limit></axis></joint>
+    <link name="right_hip_dummy">
+      <pose relative_to="torso">0 0.10 -0.15 0 0 0</pose>
+      <inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial>
+    </link>
+
+    <link name="left_hip_dummy">
+      <pose relative_to="torso">0 -0.10 -0.15 0 0 0</pose>
+      <inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial>
+    </link>
+
+    <link name="right_thigh">
+      <pose relative_to="right_hip_dummy">0 0 -0.125 0 0 0</pose>
+      <inertial><mass>1.0</mass><inertia><ixx>0.0057</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0057</iyy><iyz>0.0</iyz><izz>0.0011</izz></inertia></inertial>
+      <collision name="right_thigh_collision"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></collision>
+      <visual name="right_thigh_visual"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></visual>
+    </link>
+
+    <link name="left_thigh">
+      <pose relative_to="left_hip_dummy">0 0 -0.125 0 0 0</pose>
+      <inertial><mass>1.0</mass><inertia><ixx>0.0057</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0057</iyy><iyz>0.0</iyz><izz>0.0011</izz></inertia></inertial>
+      <collision name="left_thigh_collision"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></collision>
+      <visual name="left_thigh_visual"><geometry><box><size>0.08 0.08 0.25</size></box></geometry></visual>
+    </link>
+
+    <link name="right_shin">
+      <pose relative_to="right_thigh">0 0 -0.25 0 0 0</pose>
+      <inertial><mass>0.8</mass><inertia><ixx>0.0044</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0044</iyy><iyz>0.0</iyz><izz>0.00048</izz></inertia></inertial>
+      <collision name="right_shin_collision"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></collision>
+      <visual name="right_shin_visual"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></visual>
+    </link>
+
+    <link name="left_shin">
+      <pose relative_to="left_thigh">0 0 -0.25 0 0 0</pose>
+      <inertial><mass>0.8</mass><inertia><ixx>0.0044</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.0044</iyy><iyz>0.0</iyz><izz>0.00048</izz></inertia></inertial>
+      <collision name="left_shin_collision"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></collision>
+      <visual name="left_shin_visual"><geometry><box><size>0.06 0.06 0.25</size></box></geometry></visual>
+    </link>
+
+    <link name="right_ankle_dummy">
+      <pose relative_to="right_shin">0 0 -0.125 0 0 0</pose>
+      <inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial>
+    </link>
+
+    <link name="left_ankle_dummy">
+      <pose relative_to="left_shin">0 0 -0.125 0 0 0</pose>
+      <inertial><mass>0.1</mass><inertia><ixx>0.0001</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0001</iyy><iyz>0</iyz><izz>0.0001</izz></inertia></inertial>
+    </link>
+
+    <link name="right_foot">
+      <pose relative_to="right_ankle_dummy">0 0 -0.02 0 0 0</pose>
+      <inertial><mass>0.4</mass><inertia><ixx>0.0014</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.00053333</iyy><iyz>0.0</iyz><izz>0.0018</izz></inertia></inertial>
+      <collision name="right_foot_collision"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></collision>
+      <visual name="right_foot_visual"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></visual>
+    </link>
+
+    <link name="left_foot">
+      <pose relative_to="left_ankle_dummy">0 0 -0.02 0 0 0</pose>
+      <inertial><mass>0.4</mass><inertia><ixx>0.0014</ixx><ixy>0.0</ixy><ixz>0.0</ixz><iyy>0.00053333</iyy><iyz>0.0</iyz><izz>0.0018</izz></inertia></inertial>
+      <collision name="left_foot_collision"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></collision>
+      <visual name="left_foot_visual"><geometry><box><size>0.12 0.20 0.04</size></box></geometry></visual>
+    </link>
+
+    <joint name="right_hip_roll" type="revolute">
+      <pose relative_to="right_hip_dummy">0 0 0 0 0 0</pose>
+      <parent>torso</parent><child>right_hip_dummy</child>
+      <axis><xyz>1 0 0</xyz>
+        <limit><lower>-1.57</lower><upper>1.57</upper><effort>50</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="right_hip_pitch" type="revolute">
+      <pose relative_to="right_thigh">0 0 0.125 0 0 0</pose>
+      <parent>right_hip_dummy</parent><child>right_thigh</child>
+      <axis><xyz>0 1 0</xyz>
+        <limit><lower>-1.57</lower><upper>1.57</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="right_knee_pitch" type="revolute">
+      <pose relative_to="right_shin">0 0 0.125 0 0 0</pose>
+      <parent>right_thigh</parent><child>right_shin</child>
+      <axis><xyz>0 1 0</xyz>
+        <limit><lower>-1.57</lower><upper>0.0</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="right_ankle_roll" type="revolute">
+      <pose relative_to="right_ankle_dummy">0 0 0 0 0 0</pose>
+      <parent>right_shin</parent><child>right_ankle_dummy</child>
+      <axis><xyz>1 0 0</xyz>
+        <limit><lower>-0.78</lower><upper>0.78</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="right_ankle_pitch" type="revolute">
+      <pose relative_to="right_foot">0 0 0.02 0 0 0</pose>
+      <parent>right_ankle_dummy</parent><child>right_foot</child>
+      <axis><xyz>0 1 0</xyz>
+        <limit><lower>-0.78</lower><upper>0.78</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="left_hip_roll" type="revolute">
+      <pose relative_to="left_hip_dummy">0 0 0 0 0 0</pose>
+      <parent>torso</parent><child>left_hip_dummy</child>
+      <axis><xyz>1 0 0</xyz>
+        <limit><lower>-1.57</lower><upper>1.57</upper><effort>50</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="left_hip_pitch" type="revolute">
+      <pose relative_to="left_thigh">0 0 0.125 0 0 0</pose>
+      <parent>left_hip_dummy</parent><child>left_thigh</child>
+      <axis><xyz>0 1 0</xyz>
+        <limit><lower>-1.57</lower><upper>1.57</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="left_knee_pitch" type="revolute">
+      <pose relative_to="left_shin">0 0 0.125 0 0 0</pose>
+      <parent>left_thigh</parent><child>left_shin</child>
+      <axis><xyz>0 1 0</xyz>
+        <limit><lower>-1.57</lower><upper>0.0</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="left_ankle_roll" type="revolute">
+      <pose relative_to="left_ankle_dummy">0 0 0 0 0 0</pose>
+      <parent>left_shin</parent><child>left_ankle_dummy</child>
+      <axis><xyz>1 0 0</xyz>
+        <limit><lower>-0.78</lower><upper>0.78</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
+
+    <joint name="left_ankle_pitch" type="revolute">
+      <pose relative_to="left_foot">0 0 0.02 0 0 0</pose>
+      <parent>left_ankle_dummy</parent><child>left_foot</child>
+      <axis><xyz>0 1 0</xyz>
+        <limit><lower>-0.78</lower><upper>0.78</upper><effort>100</effort><velocity>1.0</velocity></limit>
+        <dynamics><damping>5.0</damping></dynamics>
+      </axis>
+    </joint>
 
     <plugin name="ArduPilotPlugin" filename="libArduPilotPlugin.so">
       <fdm_addr>127.0.0.1</fdm_addr>
@@ -61,21 +183,90 @@
       <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
       <gazeboXYZToNED>0 0 0 3.141593 0 0</gazeboXYZToNED>
       <imuName>torso_imu</imuName>
-
       <control channel="0"><jointName>right_hip_pitch</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>200.0</p_gain><i_gain>1.0</i_gain><d_gain>5.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>100.0</cmd_max><cmd_min>-100.0</cmd_min></control>
-      <control channel="1"><jointName>right_hip_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>
-      <control channel="2"><jointName>right_knee_pitch</jointName><useForce>1</useForce><multiplier>-1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>      <control channel="3"><jointName>right_ankle_pitch</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>
-      <control channel="4"><jointName>right_ankle_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>
+      <control channel="1"><jointName>right_hip_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>50.0</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>20.0</cmd_max><cmd_min>-20.0</cmd_min></control>
+      <control channel="2"><jointName>right_knee_pitch</jointName><useForce>1</useForce><multiplier>-1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>200.0</p_gain><i_gain>0.0</i_gain><d_gain>5.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>100.0</cmd_max><cmd_min>-100.0</cmd_min></control>
+      <control channel="3"><jointName>right_ankle_pitch</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>100.0</p_gain><i_gain>0.0</i_gain><d_gain>2.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>50.0</cmd_max><cmd_min>-50.0</cmd_min></control>
+      <control channel="4"><jointName>right_ankle_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>50.0</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>20.0</cmd_max><cmd_min>-20.0</cmd_min></control>
       <control channel="5"><jointName>left_hip_pitch</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>200.0</p_gain><i_gain>1.0</i_gain><d_gain>5.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>100.0</cmd_max><cmd_min>-100.0</cmd_min></control>
-      <control channel="6"><jointName>left_hip_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>
-      <control channel="7"><jointName>left_knee_pitch</jointName><useForce>1</useForce><multiplier>-1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>      <control channel="8"><jointName>left_ankle_pitch</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>
-      <control channel="9"><jointName>left_ankle_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>10.0</p_gain><i_gain>0.0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min></control>
+      <control channel="6"><jointName>left_hip_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>50.0</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>20.0</cmd_max><cmd_min>-20.0</cmd_min></control>
+      <control channel="7"><jointName>left_knee_pitch</jointName><useForce>1</useForce><multiplier>-1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>200.0</p_gain><i_gain>0.0</i_gain><d_gain>5.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>100.0</cmd_max><cmd_min>-100.0</cmd_min></control>
+      <control channel="8"><jointName>left_ankle_pitch</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>100.0</p_gain><i_gain>0.0</i_gain><d_gain>2.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>50.0</cmd_max><cmd_min>-50.0</cmd_min></control>
+      <control channel="9"><jointName>left_ankle_roll</jointName><useForce>1</useForce><multiplier>1.0</multiplier><offset>0.0</offset><servo_min>1000</servo_min><servo_max>2000</servo_max><type>POSITION</type><p_gain>50.0</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>20.0</cmd_max><cmd_min>-20.0</cmd_min></control>
     </plugin>
-    <joint name="world_anchor" type="fixed">
-    <parent>world</parent>
-    <child>torso</child>
-    </joint>
+
     <plugin filename="gz-sim-joint-state-publisher-system"
         name="gz::sim::systems::JointStatePublisher"/>
-    </model>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>right_hip_pitch</joint_name>
+      <topic>/right_hip_pitch/cmd</topic>
+      <p_gain>200</p_gain><i_gain>1.0</i_gain><d_gain>5.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>left_hip_pitch</joint_name>
+      <topic>/left_hip_pitch/cmd</topic>
+      <p_gain>200</p_gain><i_gain>1.0</i_gain><d_gain>5.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>right_knee_pitch</joint_name>
+      <topic>/right_knee_pitch/cmd</topic>
+      <p_gain>200</p_gain><i_gain>0.0</i_gain><d_gain>5.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>left_knee_pitch</joint_name>
+      <topic>/left_knee_pitch/cmd</topic>
+      <p_gain>200</p_gain><i_gain>0.0</i_gain><d_gain>5.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>right_ankle_pitch</joint_name>
+      <topic>/right_ankle_pitch/cmd</topic>
+      <p_gain>100</p_gain><i_gain>0.0</i_gain><d_gain>2.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>left_ankle_pitch</joint_name>
+      <topic>/left_ankle_pitch/cmd</topic>
+      <p_gain>100</p_gain><i_gain>0.0</i_gain><d_gain>2.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>right_hip_roll</joint_name>
+      <topic>/right_hip_roll/cmd</topic>
+      <p_gain>50</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>left_hip_roll</joint_name>
+      <topic>/left_hip_roll/cmd</topic>
+      <p_gain>50</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>right_ankle_roll</joint_name>
+      <topic>/right_ankle_roll/cmd</topic>
+      <p_gain>50</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system"
+        name="gz::sim::systems::JointPositionController">
+      <joint_name>left_ankle_roll</joint_name>
+      <topic>/left_ankle_roll/cmd</topic>
+      <p_gain>50</p_gain><i_gain>0.0</i_gain><d_gain>1.0</d_gain>
+    </plugin>
+
+  </model>
 </sdf>
